@@ -11,23 +11,21 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
-        int highest = Integer.valueOf(scanner.nextLine());
-        int lowest = Integer.valueOf(scanner.nextLine());
+        int highest = 0;
+        int lowest = 1000000000;
         System.out.println("Enter test scores: ");
-        int score = Integer.valueOf(scanner.nextLine());
         while (true) {
 
+            int score = Integer.valueOf(scanner.nextLine());
             if (score == -1) {
                 break;
             }
-
             if (score > highest) {
                 highest = score;
             }
-            if (score < lowest) {
+            if (lowest > score) {
                 lowest = score;
             }
-
         }
         System.out.println("The highest score was " + highest);
         System.out.println("The lowest score was " + lowest);
